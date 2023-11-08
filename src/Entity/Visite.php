@@ -23,12 +23,12 @@ class Visite
     private $pays;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $ville;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $note;
 
@@ -58,9 +58,17 @@ class Visite
     {
         return $this->id;
     }
-    public function setPays(): ?string
+    
+    public function getPays(): ?string
     {
-        return $this->ville;
+        $this->pays;
+    }
+    
+    public function setPays(?string $pays): self
+    {
+        $this->pays = $pays;
+        
+        return $this;
     }
 
     public function getVille(): ?string
@@ -68,7 +76,7 @@ class Visite
         return $this->ville;
     }
 
-    public function setVille(string $ville): self
+    public function setVille(?string $ville): self
     {
         $this->ville = $ville;
 
@@ -133,10 +141,5 @@ class Visite
         $this->tempmax = $tempmax;
 
         return $this;
-    }
-
-    public function getPays(): ?string
-    {
-        return $this->Pays;
     }
 }

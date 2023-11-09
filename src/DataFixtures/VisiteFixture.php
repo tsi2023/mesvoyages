@@ -18,7 +18,7 @@ class VisiteFixture extends Fixture {
 
             $visite->setVille($faker->city)
                     ->setPays($faker->country)
-                    ->setDatecration($faker->dateTimeBetween('-10 years', 'now'))
+                    ->setDatecreationation($faker->dateTimeBetween('-10 years', 'now'))
                     ->setTempmin($faker->numberBetween(-20, 10))
                     ->setTempmax($faker->numberBetween(10, 40))
                     ->setNote($faker->numberBetween(0, 20))

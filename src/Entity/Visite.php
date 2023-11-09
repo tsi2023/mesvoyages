@@ -61,7 +61,7 @@ class Visite
     
     public function getPays(): ?string
     {
-        $this->pays;
+        return $this->pays;
     }
     
     public function setPays(?string $pays): self
@@ -107,12 +107,12 @@ class Visite
         return $this;
     }
 
-    public function getDatecration(): ?\DateTimeInterface
+    public function getDatecreation(): ?\DateTimeInterface
     {
         return $this->datecration;
     }
 
-    public function setDatecration(?\DateTimeInterface $datecration): self
+    public function setDatecreation(?\DateTimeInterface $datecration): self
     {
         $this->datecration = $datecration;
 
@@ -141,5 +141,13 @@ class Visite
         $this->tempmax = $tempmax;
 
         return $this;
+    }
+    public function getDatecreationString(): string
+    {
+        if($this->datecration == null){
+            return "";
+        }else{
+            return $this->datecration->format('d/m/Y');
+        }
     }
 }
